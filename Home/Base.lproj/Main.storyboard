@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,142 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="D6W-Wc-5aW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpu-dr-6tI" customClass="CSAnimationView">
+                                <rect key="frame" x="17" y="297.5" width="341" height="71"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxd-My-EF4">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="Lights" backgroundImage="button"/>
+                                        <state key="selected" backgroundImage="Rectangle"/>
+                                        <state key="highlighted" backgroundImage="Rectangle"/>
+                                        <connections>
+                                            <action selector="lightstoggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQY-hf-7S6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zxd-My-EF4" firstAttribute="centerY" secondItem="kpu-dr-6tI" secondAttribute="centerY" id="AZS-zC-a1e"/>
+                                    <constraint firstItem="Zxd-My-EF4" firstAttribute="height" secondItem="kpu-dr-6tI" secondAttribute="height" id="M25-mb-R9g"/>
+                                    <constraint firstItem="Zxd-My-EF4" firstAttribute="centerX" secondItem="kpu-dr-6tI" secondAttribute="centerX" id="adX-VX-k9v"/>
+                                    <constraint firstItem="Zxd-My-EF4" firstAttribute="width" secondItem="kpu-dr-6tI" secondAttribute="width" id="pqj-rf-hzN"/>
+                                    <constraint firstAttribute="width" secondItem="kpu-dr-6tI" secondAttribute="height" multiplier="341:71" id="qbu-tX-YFv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiO-yw-oeB" customClass="CSAnimationView">
+                                <rect key="frame" x="17" y="403" width="341" height="71"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-v7-7d7">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="Fans" backgroundImage="button"/>
+                                        <state key="selected" backgroundImage="Rectangle"/>
+                                        <state key="highlighted" backgroundImage="Rectangle"/>
+                                        <connections>
+                                            <action selector="fanstoggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekd-if-P6y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9Cl-v7-7d7" firstAttribute="height" secondItem="MiO-yw-oeB" secondAttribute="height" id="7xJ-BR-aAS"/>
+                                    <constraint firstItem="9Cl-v7-7d7" firstAttribute="width" secondItem="MiO-yw-oeB" secondAttribute="width" id="AFr-oH-6tD"/>
+                                    <constraint firstItem="9Cl-v7-7d7" firstAttribute="centerX" secondItem="MiO-yw-oeB" secondAttribute="centerX" id="Kct-68-vOe"/>
+                                    <constraint firstAttribute="width" secondItem="MiO-yw-oeB" secondAttribute="height" multiplier="341:71" id="b3j-bd-oRb"/>
+                                    <constraint firstItem="9Cl-v7-7d7" firstAttribute="centerY" secondItem="MiO-yw-oeB" secondAttribute="centerY" id="tzQ-vJ-uhq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6k4-br-bgo">
+                                <rect key="frame" x="16" y="0.0" width="343" height="58"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-Bu-fat">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="58"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwitcHome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlV-oV-h4D">
+                                        <rect key="frame" x="0.5" y="12" width="343" height="58"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UlV-oV-h4D" firstAttribute="width" secondItem="6k4-br-bgo" secondAttribute="width" id="E13-Kx-Z7c"/>
+                                    <constraint firstAttribute="bottom" secondItem="UlV-oV-h4D" secondAttribute="bottom" constant="-12" id="GvS-ed-nLW"/>
+                                    <constraint firstItem="cNd-Bu-fat" firstAttribute="width" secondItem="6k4-br-bgo" secondAttribute="width" id="UwR-sf-maY"/>
+                                    <constraint firstItem="cNd-Bu-fat" firstAttribute="centerY" secondItem="6k4-br-bgo" secondAttribute="centerY" id="VW9-4J-6xS"/>
+                                    <constraint firstItem="UlV-oV-h4D" firstAttribute="centerX" secondItem="6k4-br-bgo" secondAttribute="centerX" id="ezp-o6-kv0"/>
+                                    <constraint firstItem="cNd-Bu-fat" firstAttribute="height" secondItem="6k4-br-bgo" secondAttribute="height" id="f6x-gs-Upd"/>
+                                    <constraint firstItem="UlV-oV-h4D" firstAttribute="height" secondItem="6k4-br-bgo" secondAttribute="height" id="tNn-21-0QG"/>
+                                    <constraint firstAttribute="width" secondItem="6k4-br-bgo" secondAttribute="height" multiplier="343:58" id="vXR-KD-1yy"/>
+                                    <constraint firstItem="cNd-Bu-fat" firstAttribute="centerX" secondItem="6k4-br-bgo" secondAttribute="centerX" id="xvP-dG-FfX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInDown"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D6W-Wc-5aW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="7HT-c1-vzz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6k4-br-bgo" secondAttribute="leading" id="LbT-me-mP2"/>
+                            <constraint firstItem="D6W-Wc-5aW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="M4F-Jw-VUX"/>
+                            <constraint firstItem="kpu-dr-6tI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="Pbj-uU-QKH"/>
+                            <constraint firstItem="6k4-br-bgo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S6W-1L-lB5"/>
+                            <constraint firstItem="MiO-yw-oeB" firstAttribute="top" secondItem="kpu-dr-6tI" secondAttribute="bottom" constant="34.5" id="T9Q-x9-XHl"/>
+                            <constraint firstItem="kpu-dr-6tI" firstAttribute="centerY" secondItem="D6W-Wc-5aW" secondAttribute="centerY" id="VQk-Kg-qFo"/>
+                            <constraint firstItem="D6W-Wc-5aW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WG3-Wb-bYE"/>
+                            <constraint firstItem="6k4-br-bgo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="bSV-cM-uCE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MiO-yw-oeB" secondAttribute="trailing" constant="1" id="c4c-Ak-RWF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6k4-br-bgo" secondAttribute="trailing" id="h5W-Kz-56d"/>
+                            <constraint firstItem="MiO-yw-oeB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="i34-DD-YeB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kpu-dr-6tI" secondAttribute="trailing" constant="1" id="j8z-Am-eLY"/>
+                            <constraint firstItem="D6W-Wc-5aW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z3d-bf-Zig"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="lightstoggle" destination="Zxd-My-EF4" id="bcP-IE-SsS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rectangle" width="341" height="71"/>
+        <image name="button" width="341" height="71"/>
+        <image name="home" width="1242" height="2208"/>
+        <image name="top" width="333" height="74"/>
+    </resources>
 </document>
